@@ -1,6 +1,5 @@
 #include <windows.h>
 
-#include <cstdlib>
 #include <condition_variable>
 #include <iostream>
 #include <mutex>
