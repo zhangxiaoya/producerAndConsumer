@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5F1A185E-AA6A-4AB0-80E2-923A285BFA3B}</ProjectGuid>
-    <RootNamespace>OneToOne</RootNamespace>
+    <ProjectGuid>{A4DB3EEE-1F15-4E83-9C7D-440070AF71C2}</ProjectGuid>
+    <RootNamespace>ManyToOne</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
