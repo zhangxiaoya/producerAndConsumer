@@ -1,6 +1,4 @@
 #include <windows.h>
-
-#include <condition_variable>
 #include <iostream>
 #include <mutex>
 #include <thread>
@@ -68,7 +66,7 @@ int ConsumeItem(ItemRepository* ir)
 
 void ProducerTask() // 生产者任务
 {
-	for (int i = 1; i <= kItemsToProduce; ++i)
+	for (auto i = 1; i <= kItemsToProduce; ++i)
 	{
 		// sleep(1);
 		std::cout << "Produce the " << i << "^th item..." << std::endl;
@@ -91,14 +89,18 @@ void ConsumerTask() // 消费者任务
 void InitItemRepository(ItemRepository* ir)
 {
 	ir->write_position = 0; // 初始化产品写入位置.
-	ir->read_position = 0; // 初始化产品读取位置.
+	ir->read_position = 0;  // 初始化产品读取位置.
 }
 
 int main()
 {
 	InitItemRepository(&gItemRepository);
+
 	std::thread producer(ProducerTask); // 创建生产者线程.
 	std::thread consumer(ConsumerTask); // 创建消费之线程.
+
 	producer.join();
 	consumer.join();
+
+	system("Pause");
 }
